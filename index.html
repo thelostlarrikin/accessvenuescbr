@@ -28,9 +28,19 @@
       <option value="companion">Companion cards</option>
       <option value="specialseat">Special seating</option>
     </select>
+
+     <label for="type">Filter by type</label>
+    <select id="type">
+      <option value="">All types</option>
+      <option value="theatre">Theatre</option>
+      <option value="pub">Pub, bar, or club</option>
+      <option value="hall">Hall</option>
+    </select>
       
     <div id="widgets">
-      <section class="widget" data-categories="wheelchairaccess audiodescribe tactiletours auslan captioning hearingloops relaxed babes mobilityass companion specialseat">
+      <section class="widget" 
+        data-categories="wheelchairaccess audiodescribe tactiletours auslan captioning hearingloops relaxed babes mobilityass companion specialseat"
+        data-type="theatre">
         <h2>Canberra Theatre Centre</h2>
        
         <table>
@@ -76,7 +86,9 @@
         </table>
       </section>  
 
-      <section class="widget" data-categories="plants">
+     <section class="widget" 
+       data-categories="wheelchairaccess audiodescribe tactiletours auslan captioning hearingloops relaxed babes mobilityass companion specialseat"
+       data-type="theatre">
         <h2>Playhouse Theatre</h2>
        
         <table>
@@ -94,7 +106,7 @@
         </tr>
         <tr>
           <th>Wheelchair access</th>
-          <td>Some wheelchair seats available</td>
+          <td>Some wheelchair seats available. Lift access to the first balcony level but not the second.</td>
         </tr>
         <tr>
           <th>Seating</th>
@@ -106,11 +118,69 @@
         </tr>
         <tr>
           <th>Accessibility options</th>
-          <td>tktk.</td>
+          <td>Audio described performances <br>Tactile tours <br>Auslan interpreted performances <br>Live captioning <br>FM radio assistance hearing units <br>Relaxed performances <br>Babes in arms performances <br>Mobility assistance <br>Special seating requests <br>Companion cards </td>
+        </tr>
+        <tr>
+          <th>Notes</th>
+          <td>Wheelchair and special seating options, mobility assistance, and companion card tickets require booking in person or over the phone. <br>Many other options only available on select performances</td>
+        </tr>
+        <tr>
+          <th>Website</th>
+          <td>
+            <a class="button-link" href="https://canberratheatrecentre.com.au/your-visit/access-special-assistance/">
+              Canberra Theatre Centre Accessibility & Inclusion
+          </td>
         </tr>
         </table>
-      </section> 
+      </section>
 
+           <section class="widget" 
+             data-categories="wheelchairaccess audiodescribe tactiletours auslan captioning hearingloops relaxed babes mobilityass companion specialseat"
+             data-type="theatre">
+        <h2>The Q</h2>
+       
+        <table>
+        <tr>
+          <th>Location</th>
+          <td>Civic</td>
+        </tr>
+        <tr>
+          <th>Parking</th>
+          <td>Accessible permit parking available in the City Hall and Hobart Place car parks. Limited nearby parking with the lightrail construction. The closest accessible drop-off and pickup location is via Constitution Avenue, in the Lyric Lane turning circle. </td>
+        </tr>
+        <tr>
+          <th>Bathrooms</th>
+          <td>tbc</td>
+        </tr>
+        <tr>
+          <th>Wheelchair access</th>
+          <td>Some wheelchair seats available. Lift access to the first balcony level but not the second.</td>
+        </tr>
+        <tr>
+          <th>Seating</th>
+          <td>tbc</td>
+        </tr>
+        <tr>
+          <th>Foyer</th>
+          <td>Some seating available in foyer.</td>
+        </tr>
+        <tr>
+          <th>Accessibility options</th>
+          <td>Audio described performances <br>Tactile tours <br>Auslan interpreted performances <br>Live captioning <br>FM radio assistance hearing units <br>Relaxed performances <br>Babes in arms performances <br>Mobility assistance <br>Special seating requests <br>Companion cards </td>
+        </tr>
+        <tr>
+          <th>Notes</th>
+          <td>Wheelchair and special seating options, mobility assistance, and companion card tickets require booking in person or over the phone. <br>Many other options only available on select performances</td>
+        </tr>
+        <tr>
+          <th>Website</th>
+          <td>
+            <a class="button-link" href="https://canberratheatrecentre.com.au/your-visit/access-special-assistance/">
+              Canberra Theatre Centre Accessibility & Inclusion
+          </td>
+        </tr>
+        </table>
+      </section>
       
     </div>
 
@@ -119,24 +189,29 @@
     <script>
     const search = document.querySelector("#search");
     const category = document.querySelector("#category");
+    const type = document.querySelector("#type");
     const widgets = document.querySelectorAll(".widget");
 
     function filterWidgets() {
       const term = search.value.trim().toLowerCase();
       const selectedCategory = category.value;
+      const selectedType = type.value;
 
       widgets.forEach(widget => {
       const matchesText = widget.textContent.toLowerCase().includes(term);
       const categories = widget.dataset.categories.split(" ");
       const matchesCategory =
         !selectedCategory || categories.includes(selectedCategory);
+      const matchesType =
+        !selectedType || widget.dataset.type === selectedType;
 
-        widget.hidden = !(matchesText && matchesCategory);
+        widget.hidden = !(matchesText && matchesCategory && matchesType);
       });
     }
 
     search.addEventListener("input", filterWidgets);
     category.addEventListener("change", filterWidgets);
+    type.addEventListener("change", filterWidgets);
   </script>
     
   </body>
