@@ -1,5 +1,5 @@
 body {
-  background-color: #B8DEE6;
+  background-color: #FFF46A;
   font-family: sans-serif;
   line-height: 1.5;
   font-size: 0.75rem;
@@ -20,6 +20,7 @@ input, select {
   border-radius: 8px;
   margin: 1rem 0;
   padding: 1rem;
+  background-color: #B8DEE6;
 }
 #widgets {
   display: grid;
