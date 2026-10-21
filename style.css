@@ -1,1 +1,7 @@
-
+body {
+  font-family: sans-serif; /* Removes the old-fashioned Times New Roman font */
+  line-height: 1.6;        /* Adds space between lines of text for readability */
+  margin: 0;               /* Removes the default gap around the edge of the page */
+  padding: 20px;           /* Adds a little breathing room around the content */
+  color: #333;             /* Changes text from pure black to a softer dark gray */
+}
