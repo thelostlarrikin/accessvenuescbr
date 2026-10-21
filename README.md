@@ -1,5 +1,3 @@
-# thelostlarrikin.github.io
-
 <script type="module">
   import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 
