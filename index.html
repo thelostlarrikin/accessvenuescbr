@@ -21,7 +21,7 @@
     </select>
       
     <div id="widgets">
-      <section class="widget" data-category="wheelchairaccess">
+      <section class="widget" data-categories="wheelchairaccess">
         <h2>Canberra Theatre</h2>
        
         <table>
@@ -56,7 +56,7 @@
         </table>
       </section>  
 
-      <section class="widget" data-category="plants">
+      <section class="widget" data-categories="plants">
         <h2>Canberra Theatre</h2>
        
         <table>
@@ -94,7 +94,31 @@
       
     </div>
 
-    </main>    
+    </main>  
+    
+    <script>
+    const search = document.querySelector("#search");
+    const category = document.querySelector("#category");
+    const widgets = document.querySelectorAll(".widget");
+
+    function filterWidgets() {
+      const term = search.value.trim().toLowerCase();
+      const selectedCategory = category.value;
+
+      widgets.forEach(widget => {
+      const matchesText = widget.textContent.toLowerCase().includes(term);
+      const categories = widget.dataset.categories.split(" ");
+      const matchesCategory =
+        !selectedCategory || categories.includes(selectedCategory);
+
+        widget.hidden = !(matchesText && matchesCategory);
+      });
+    }
+
+    search.addEventListener("input", filterWidgets);
+    category.addEventListener("change", filterWidgets);
+  </script>
+    
   </body>
 
 </html>
