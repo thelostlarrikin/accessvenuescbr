@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
   <body>
+    <main>
   <h1>
     Performing Arts Venues in the Canberra Region
   </h1>
+      
+<label for="search">Search widgets</label>
+    <input id="search" type="search" placeholder="Search by name or detail">
 
-<p>This is a basic web page.</p>
-
+     <label for="category">Filter by category</label>
+    <select id="category">
+      <option value="">All categories</option>
+      <option value="animals">Animals</option>
+      <option value="plants">Plants</option>
+    </select>
+      
     <div class="filterDiv x">
       <h2>Canberra Theatre</h2>
       <table>
@@ -44,7 +54,8 @@
       </table>
       <span class="tag"> x </span>
     </div>
-    
-</body>
+
+    </main>    
+  </body>
 
 </html>
