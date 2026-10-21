@@ -1,13 +1,12 @@
 body {
+  background-color: #B8DEE6;
   font-family: sans-serif;
   line-height: 1.6;
   margin: 0;
   padding: 20px;
   color: #333;
 }
-background {
-  color: #555;
-}
+
 h1 {
   color: #222;
   margin-bottom: 10px;
