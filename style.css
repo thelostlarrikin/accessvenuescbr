@@ -45,3 +45,13 @@ th, td {
   padding: 0.3rem;
   vertical-align: top;
 }
+.button-link {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  background-color: #405992;
+  color: white;
+  border-radius: 4px;
+}
+.button-link:hover {
+  background-color: #4F6DB1;
+}
