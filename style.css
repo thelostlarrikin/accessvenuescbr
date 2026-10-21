@@ -7,15 +7,13 @@ body {
   padding: 1rem;
 }
 label {
-  display: block;
+  padding: 1rem;
   margin-top: 1rem;
 }
 input, select {
   font: inherit;
   margin-top: 0.25rem;
-  max-width: 100%;
   padding: 0.5rem;
-  width: 100%;
 }
 .widget {
   border: 1px solid #333;
