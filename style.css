@@ -17,14 +17,3 @@ h3 {
   font-size: 1rem;
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.filterDiv {
-  flex: 1 1 250px;    /* Grow, shrink, and try to be 250px wide */
-  max-width: 400px;   /* Prevents them from becoming giant on huge screens */
-}
