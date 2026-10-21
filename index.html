@@ -198,7 +198,8 @@
       const selectedType = type.value;
 
       widgets.forEach(widget => {
-      const matchesText = widget.textContent.toLowerCase().includes(term);
+      const name = widget.querySelector("h2").textContent.toLowerCase();
+      const matchesText = name.includes(term);
       const categories = widget.dataset.categories.split(" ");
       const matchesCategory =
         !selectedCategory || categories.includes(selectedCategory);
