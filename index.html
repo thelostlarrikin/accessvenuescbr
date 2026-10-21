@@ -1,28 +1,17 @@
-<script type="module">
-  import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+<!DOCTYPE html>
+<html>
+<head>
 
-  const supabase = createClient(
-    "https://iddzstbhsenlfyoszobf.supabase.co",
-    "sb_publishable_zSuVYF5Mcydl_5eNvip9cw_tqZ6461p"
-  );
+<title>My first web page</title>
 
-  async function showItemsWithTag(tag) {
-    const { data, error } = await supabase
-      .from("items")
-      .select("id, title, tags")
-      .contains("tags", [tag]);
+</head>
 
-    if (error) {
-      console.error(error);
-      return;
-    }
+<body>
 
-    document.querySelector("#results").innerHTML = data
-      .map(item => `<p>${item.title}</p>`)
-      .join("");
-  }
+<h1>Hello World.</h1>
 
-  showItemsWithTag("animals");
-</script>
+<p>This is a basic web page.</p>
 
-<div id="results"></div>
+</body>
+
+</html>
