@@ -24,9 +24,22 @@ input, select {
 }
 #widgets {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
+
+@media (min-width: 600px) {
+  #widgets {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  #widgets {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 h1 {
   color: #222;
   margin-bottom: 10px;
