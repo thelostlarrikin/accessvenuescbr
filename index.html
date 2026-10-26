@@ -1969,6 +1969,7 @@
       const term = search.value.trim().toLowerCase();
       const selectedCategory = category.value;
       const selectedType = type.value;
+      const selectedLocal = local.value;
 
       widgets.forEach(widget => {
       const name = widget.querySelector("h2").textContent.toLowerCase();
@@ -1977,7 +1978,9 @@
       const matchesCategory =
         !selectedCategory || categories.includes(selectedCategory);
       const matchesType =
-        !selectedType || widget.dataset.type === selectedType;
+        !selectedType || widget.dataset.type === (selectedType);
+        const matchesLocal =
+        !selectedLocal || widget.dataset.local === (selectedLocal);
 
         widget.hidden = !(matchesText && matchesCategory && matchesType);
       });
