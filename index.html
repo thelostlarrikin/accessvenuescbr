@@ -12,7 +12,7 @@
       <p>Information has been sourced from the websites linked with each venue, as well as contact with the venues. 
         <br>Wheelchair accessibility will be checked with community who use mobility aids to make sure it is accurate, and will be updated to reflect their experience.</p>
 <label for="search">Search venues</label>
-    <input id="search" type="search" placeholder="Search by name or detail">
+    <input id="search" type="search" placeholder="Search by name">
 
      <label for="category">Filter by tag</label>
     <select id="category">
@@ -1990,6 +1990,7 @@
     search.addEventListener("input", filterWidgets);
     category.addEventListener("change", filterWidgets);
     type.addEventListener("change", filterWidgets);
+    local.addEventListener("change", filterWidgets);
   </script>
     
   </body>
