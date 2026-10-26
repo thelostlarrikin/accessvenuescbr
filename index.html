@@ -1982,7 +1982,7 @@
         const matchesLocal =
         !selectedLocal || widget.dataset.local === (selectedLocal);
 
-        widget.hidden = !(matchesText && matchesCategory && matchesType);
+        widget.hidden = !(matchesText && matchesCategory && matchesType && matchesLocal);
       });
     }
 
